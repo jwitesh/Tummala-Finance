@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director Dashboard | Tummala Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { padding-top: 100px; }
+        .dashboard-container { padding: 40px 8%; }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 20px; }
+        .dashboard-header h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2.5rem; }
+        
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+        .app-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 15px; padding: 25px; transition: 0.3s; }
+        .app-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .app-header { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; margin-bottom: 15px; }
+        .app-name { font-size: 1.2rem; font-weight: bold; color: #fff; }
+        .app-id { font-size: 0.8rem; color: var(--text-muted); }
+        
+        .app-detail { margin-bottom: 10px; font-size: 0.95rem; color: #cbd5e1; }
+        .app-detail strong { color: var(--gold); margin-right: 5px; }
+        
+        .action-row { display: flex; gap: 10px; margin-top: 20px; }
+        .status-select { background: #0f172a; color: white; border: 1px solid rgba(212, 175, 55, 0.4); padding: 10px; border-radius: 8px; flex: 1; outline: none; }
+        .btn-update { background: var(--gold); color: #000; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-update:hover { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="logo">Tummala <span>Directors</span></h1>
+        <div class="nav-links">
+            <button class="btn-gold-outline" onclick="window.location.href='index.html'">Back to Vault</button>
+            <button class="btn-gold" id="logoutAdminBtn" style="margin-left: 15px;">Secure Logout</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>Active Loan Portfolios</h2>
+            <p style="color: var(--text-muted);">Total Requests: <span id="totalCount" style="color: #fff; font-weight: bold;">0</span></p>
+        </div>
+
+        <div id="applicationsGrid" class="admin-grid">
+            <p style="color: var(--text-muted);">Loading secure data...</p>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
